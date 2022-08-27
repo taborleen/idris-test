@@ -1,0 +1,21 @@
+footer {
+  height: 140px;
+  background-color: #0084ae;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: 22px;
+  padding-left: 90px;
+}
+
+.links {
+  column-count: 2;
+  column-gap: 20px;
+  color: #fff;
+  list-style: none;
+  width: 25%;
+
+  &__item {
+    margin-bottom: 5px;
+  }
+}
