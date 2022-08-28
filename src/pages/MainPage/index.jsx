@@ -9,13 +9,14 @@ const MainPage = () => {
   const [fetching, setFetching] = React.useState(true);
 
   const data = useSelector((state) => state.card.card);
+  const result = useSelector((state) => state.card.result)
 
   const dispatch = useDispatch();
-
+  
   React.useEffect(() => {
     if (fetching) {
       currentPage !== data?.total &&
-        setCurrentPage((prevState) => prevState + 8);
+        setCurrentPage(currentPage + 8);
       dispatch(fetchCard(currentPage)).finally(() => setFetching(false));
     }
   }, [fetching]);

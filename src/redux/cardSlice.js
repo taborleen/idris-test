@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   card: null,
+  result: null
 };
 
 export const fetchCard = createAsyncThunk(
@@ -31,6 +32,7 @@ const cardSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchCard.fulfilled, (state, action) => {
       state.card = action.payload
+      state.result = action.payload.items
     });
   },
 });
